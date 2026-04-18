@@ -98,14 +98,142 @@ button {
     transform: translateY(-1px);
 }
 
-.reset-button {
-    width: 100%;
+.footer-buttons {
+    display: grid;
+    gap: 0.75rem;
     margin-top: 1rem;
-    background: rgba(255, 255, 255, 0.12);
-    color: #e2e8f0;
 }
 
-.reset-button:hover {
+.reset-button,
+.music-button,
+.end-game-button,
+.settings-toggle,
+.close-settings {
+    padding: 0.95rem 1.25rem;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reset-button {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+.music-button {
+    background: #a855f7;
+    color: #ffffff;
+}
+
+.end-game-button {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.settings-toggle {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 4.4rem;
+    height: 3.2rem;
+    padding: 0 0.95rem;
+    border-radius: 2rem;
+    background: rgba(15, 23, 42, 0.88);
+    color: #f8fafc;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    box-shadow: 0 16px 32px rgba(8, 11, 32, 0.3);
+}
+
+.settings-toggle:hover {
+    transform: translateY(-50%) scale(1.02);
+}
+
+.settings-panel {
+    position: fixed;
+    right: -320px;
+    top: 0;
+    height: 100%;
+    width: min(320px, calc(100% - 1rem));
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(16px);
+    transition: right 0.28s ease;
+    z-index: 20;
+}
+
+.settings-panel.open {
+    right: 0;
+}
+
+.settings-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    height: 100%;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.settings-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-settings {
+    background: rgba(255, 255, 255, 0.12);
+    color: #f8fafc;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.settings-text {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+}
+
+.setting-row label {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.setting-row input[type="color"] {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+}
+
+.reset-button:hover,
+.music-button:hover,
+.end-game-button:hover,
+.close-settings:hover {
     transform: translateY(-1px);
 }
 
